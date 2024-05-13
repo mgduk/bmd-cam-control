@@ -1,0 +1,20 @@
+bug:
+
+in /control/asyncAPI/Notification.yaml
+channels:
+  /:
+    publish:
+      message:
+        oneOf:
+          - $ref: '#/components/messages/responseMessage'
+> should be requestMessage
+
+if you set a shutter speed lower than the frame rate, the request returns 204 but the value isn't changed, and there's no websocket message
+
+when changing the aperture stop, one or two websocket messages are immediately received with the _old_ value for apertureStop — sometimes (not always) another is received with the new value
+
+YAML CORS headers
+
+No websocket message sent sometimes when auto focusing — seemingly when the camera struggles to find focus
+
+When connected to ATEM, changing the frame rate fails silently
